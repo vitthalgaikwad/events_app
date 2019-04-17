@@ -1,5 +1,17 @@
 {
   "name": "civic_plus_app",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@babel/preset-react": "^7.0.0",
+    "@rails/webpacker": "^4.0.2",
+    "axios": "^0.18.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-table": "^6.9.2"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.3.1"
+  }
 }
