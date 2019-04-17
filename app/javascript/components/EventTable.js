@@ -4,21 +4,10 @@ import 'react-table/react-table.css'
 
 class EventTable extends React.Component {
   constructor(props) {
-    super(props);
-
-    this.state = {
-      events: []
-    };
-  }
-
-  componentDidMount() {
-    fetch('http://localhost:3000/events')
-      .then(response => response.json())
-      .then(data => this.setState({ events: data }));
-  }
+    super(props);     
+  }  
 
   render() {
-    const data = this.state.events;
     const columns = [{
         Header: 'Title',
         accessor: 'title'
@@ -32,7 +21,7 @@ class EventTable extends React.Component {
         Header: 'End Date',
         accessor: 'endDate'
       }];
-    return <ReactTable data={data} columns={columns} />
+    return <ReactTable data={this.props.events} columns={columns} />
   }
 }
 

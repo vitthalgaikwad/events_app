@@ -6,9 +6,18 @@ class EventsController < ApplicationController
   	render json: events['items']
   end
 
+  def create
+  	event = civic_plus.create_event(event_params)
+  	render json: event
+  end
+
   private
 
   def civic_plus
   	CivicPlusService.new(REQUEST_PREFIX)
+  end
+
+  def event_params
+  	params.require(:event).permit(:title, :description, :startDate, :endDate)
   end
 end
